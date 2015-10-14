@@ -74,7 +74,7 @@ try:
             
         request_url+="&page="
         
-        for this_page in range(1,3):
+        for this_page in range(1,page_count):
             
 #            print request_url+str(this_page)
             request = Request(request_url+str(this_page))

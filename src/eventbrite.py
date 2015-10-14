@@ -78,7 +78,7 @@ try:
             
         request_url+="&page="
         
-        for this_page in range(1,page_count):
+        for this_page in range(1,2):
             
             print request_url+str(this_page)
             if(this_page>0 and this_page%5==0):
@@ -103,11 +103,11 @@ try:
                 except:
                     description = encoding(checkNull("none"))   
                 try:
-                    start_time =  json_data['events'][event]['start']
+                    start_time =  json_data['events'][event]['start']['local']
                 except:
                     start_time={}
                 try:
-                    end_time =  json_data['events'][event]['end']
+                    end_time =  json_data['events'][event]['end']['local']
                 except:
                     end_time = {}
                 try:

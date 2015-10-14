@@ -64,7 +64,6 @@ try:
         json_data = json.loads(api_data)
 #	print json_data
         
-    
         
         try:
             page_count = int(json_data['page_count'])
@@ -75,7 +74,7 @@ try:
             
         request_url+="&page="
         
-        for this_page in range(1,page_count):
+        for this_page in range(1,3):
             
 #            print request_url+str(this_page)
             request = Request(request_url+str(this_page))
@@ -110,7 +109,7 @@ try:
                     end_time={}
                     
                 try:
-                    logo_url =  encoding(checkNull(json_data['events']['event'][event]['image']['medium']['url']))
+                    logo_url =  json_data['events']['event'][event]['image']['medium']['url']
                 except:
                     logo_url =  encoding(checkNull("none"))
                 

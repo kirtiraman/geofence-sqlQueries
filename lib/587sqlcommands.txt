@@ -1,0 +1,34 @@
+//USER Table:
+create table userData
+( userId  INTEGER NOT NULL,
+  userName VARCHAR(20) NOT NULL,
+  password VARCHAR(32) NOT NULL,
+  email VARCHAR(320) NOT NULL,
+  phoneNumber CHAR(20) NOT NULL,
+  CONSTRAINT user_pk PRIMARY KEY (userId)
+);
+INSERT INTO USER
+VALUES (1,'kirti','munmun','kirtiram@usc.edu',2134773932);
+
+//GEOFENCE Table
+create table Geofence
+(
+geofenceId INTEGER NOT NULL,
+geofenceName VARCHAR(20) NOT NULL,
+geofenceCreator INTEGER,
+CONSTRAINT geo_pk PRIMARY KEY (geofenceId)
+);
+SELECT AddGeometryColumn('Geofence', 'center', '4326', 'POINT', 2);
+INSERT INTO Geofence(geofenceId , center) VALUES(2,'GEOFENCE1',1, ST_GeomFromText('POINT(-71.060316 48.432044)', 4326);
+
+// Events Table
+create table Events
+(
+eventId INTEGER NOT NULL,
+eventName VARCHAR(20) NOT NULL,
+sourceWeightage INTEGER,
+eventWebsiteURL VARCHAR(23),
+CONSTRAINT event_pk PRIMARY KEY (eventId)
+);
+SELECT ADDGeometryColumn('Events', 'location','4326','POINT',2);
+INSERT INTO Geofence(eventId , location) VALUES(2,'EVENT1',1,'jshcjksahf.com', ST_GeomFromText('POINT(-71.060316 48.432044)', 4326);
